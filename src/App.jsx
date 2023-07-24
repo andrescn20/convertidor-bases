@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
@@ -19,6 +19,12 @@ function App() {
     setNueva(e.target.value)
   }
 
+  useEffect(() => {
+    console.log(`Original: ${original}`)
+    console.log(`Nueva: ${nueva}`)
+  }, [original, nueva])
+
+
   const updateNumero = (e) => {
     console.log(e.target.value)
     setNumero(e.target.value)
@@ -32,7 +38,6 @@ function App() {
 
     //Convierte de cualquier base a Decimal:
     porCalcular = parseInt(numero, baseOriginal)
-    console.log(`Conversion a Decimal: ${porCalcular}`)
 
     if (isNaN(porCalcular)) {
       console.log('Estamos dentro del error'
@@ -75,6 +80,9 @@ function App() {
             case 15:
               return 'F'
           }
+        }
+        else {
+          return digit
         }
       }
       )
@@ -123,7 +131,7 @@ function App() {
           <p className='mx-2'>
             andrescn20
           </p>
-          <i class="devicon-github-original"></i>
+          <i className="devicon-github-original"></i>
 
         </a>
       </div>
