@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import { parse } from 'postcss'
 
 function App() {
   const [original, setOriginal] = useState(10)
